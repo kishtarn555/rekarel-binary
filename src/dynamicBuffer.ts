@@ -80,18 +80,21 @@ export class DynamicBuffer {
     reserve8() {
         let offset = this.offset;
         this.ensureCapacity(1, this.offset);
+        this.offset += 1;
         return offset;
     }
-
+    
     reserve16() {
         let offset = this.offset;
         this.ensureCapacity(2, this.offset);
+        this.offset += 2;
         return offset;
     }
-
+    
     reserve32() {
         let offset = this.offset;
         this.ensureCapacity(4, this.offset);
+        this.offset += 4;
         return offset;
     }
 
