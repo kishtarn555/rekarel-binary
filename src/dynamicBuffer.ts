@@ -47,14 +47,14 @@ export class DynamicBuffer {
     writeUint16(value: number, offset?: number) {
         const writeOffset = offset !== undefined ? offset : this.offset;
         this.ensureCapacity(2, writeOffset);
-        this.view.setUint16(writeOffset, value);
+        this.view.setUint16(writeOffset, value, true);
         if (offset === undefined) this.offset = Math.max(this.offset, writeOffset+2);
     }
 
     writeUint32(value: number, offset?: number) {
         const writeOffset = offset !== undefined ? offset : this.offset;
         this.ensureCapacity(4, writeOffset);
-        this.view.setUint16(writeOffset, value);
+        this.view.setUint32(writeOffset, value, true);
         if (offset === undefined) this.offset = Math.max(this.offset, writeOffset+4);
     }
 
