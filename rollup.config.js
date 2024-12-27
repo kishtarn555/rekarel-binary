@@ -15,7 +15,6 @@ export default [{
     
     plugins: [
         commonjs(),
-        nodeResolve(),
         ts
     ]
   },
@@ -29,7 +28,6 @@ export default [{
     
     plugins: [
         commonjs(),
-        nodeResolve(),
         ts,
     ]
   },
