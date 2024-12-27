@@ -1,3 +1,4 @@
 import { KarelBinarySerializer } from "./serializer";
+import { deserializeKarelBinary } from "./deserializer";
 
-export { KarelBinarySerializer }
+export { KarelBinarySerializer, deserializeKarelBinary }
