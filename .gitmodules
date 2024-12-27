@@ -1,0 +1,3 @@
+[submodule "tests/test_suite"]
+	path = tests/test_suite
+	url = https://github.com/kishtarn555/ReKarel-TestSuite.git
