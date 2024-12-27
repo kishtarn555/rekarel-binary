@@ -77,6 +77,24 @@ export class DynamicBuffer {
         if (offset === undefined) this.offset = Math.max(this.offset, writeOffset+value.length+1);;
     }
 
+    reserve8() {
+        let offset = this.offset;
+        this.ensureCapacity(1, this.offset);
+        return offset;
+    }
+
+    reserve16() {
+        let offset = this.offset;
+        this.ensureCapacity(2, this.offset);
+        return offset;
+    }
+
+    reserve32() {
+        let offset = this.offset;
+        this.ensureCapacity(4, this.offset);
+        return offset;
+    }
+
     /**
      * Gets the size of the written data
      * @returns The size of the data
