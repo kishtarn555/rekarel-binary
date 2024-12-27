@@ -1,6 +1,6 @@
 import { DumpTypes, KarelNumbers, World } from "@rekarel/core";
 
-export function deserialize(data: ArrayBuffer, target: World) {
+export function deserializeKarelBinary(data: ArrayBuffer, target: World) {
     new Deserialization(data, target);
 
 }
