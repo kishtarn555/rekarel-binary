@@ -159,6 +159,7 @@ class KarelSerialization {
                     | (this.world.getDumpCell(row,column+1)? 32 : 0);
                 i++; // Skip next
             }
+            this.target.writeUint8(number);
         }
         return pairsCount;
     }
