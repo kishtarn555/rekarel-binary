@@ -86,7 +86,7 @@ class Deserialization {
     private readBeeperEntry() {
         let coord = this.coordToIJ(this.readWord(this.cWord));
         let beeper = this.readWord(this.bWord);
-        if (this.isInfinite(beeper, this.aWord)) {
+        if (this.isInfinite(beeper, this.bWord)) {
             this.world.setBuzzers(coord.i, coord.j, KarelNumbers.a_infinite);
             return;
         }
@@ -186,7 +186,7 @@ class Deserialization {
     }
 
     private readUint8() {
-        if (this.offset + 1 >= this.data.byteLength) {
+        if (this.offset + 1 > this.data.byteLength) {
             throw new Error("Found unexpected EOF");
         }
         this.offset += 1;
@@ -194,15 +194,15 @@ class Deserialization {
     }
 
     private readUint16() {
-        if (this.offset + 2 >= this.data.byteLength) {
+        if (this.offset + 2 > this.data.byteLength) {
             throw new Error("Found unexpected EOF");
         }
         this.offset += 2;
-        return this.data.getUint16(this.offset - 2);
+        return this.data.getUint16(this.offset - 2, true);
     }
 
     private readUint32() {
-        if (this.offset + 4 >= this.data.byteLength) {
+        if (this.offset + 4 > this.data.byteLength) {
             throw new Error("Found unexpected EOF");
         }
         this.offset += 4;
