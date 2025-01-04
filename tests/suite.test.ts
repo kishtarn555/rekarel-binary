@@ -32,7 +32,11 @@ function parseProblem (dirname:string) {
                 const binary = (new KarelBinarySerializer().serialize(world));
                 const outputWorld = new World(10, 10);
                 deserializeKarelBinary(binary, outputWorld);
-                // expect(world).toEqual(outputWorld);
+
+                const firstSave = world.save("start");
+                const binarySave = outputWorld.save("start");
+                expect(binarySave).toEqual(firstSave)
+                expect(outputWorld.getDumpCellCount()).toEqual(world.getDumpCellCount())
 
             }
         }, 10000);
