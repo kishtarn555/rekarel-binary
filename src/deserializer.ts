@@ -55,10 +55,10 @@ class Deserialization {
         let maxPickBuzzer = this.readUint32();
         let maxLeaveBuzzer = this.readUint32();
 
-        this.world.maxMove = maxMove === 0xFFFFFFFF ? KarelNumbers.a_infinite : maxMove;
-        this.world.maxTurnLeft = maxTurnLeft === 0xFFFFFFFF ? KarelNumbers.a_infinite : maxTurnLeft;
-        this.world.maxPickBuzzer = maxPickBuzzer === 0xFFFFFFFF ? KarelNumbers.a_infinite : maxPickBuzzer;
-        this.world.maxLeaveBuzzer = maxLeaveBuzzer === 0xFFFFFFFF ? KarelNumbers.a_infinite : maxLeaveBuzzer;
+        this.world.maxMove = maxMove === 0xFFFFFFFF ? -1 : maxMove;
+        this.world.maxTurnLeft = maxTurnLeft === 0xFFFFFFFF ? -1 : maxTurnLeft;
+        this.world.maxPickBuzzer = maxPickBuzzer === 0xFFFFFFFF ? -1 : maxPickBuzzer;
+        this.world.maxLeaveBuzzer = maxLeaveBuzzer === 0xFFFFFFFF ? -1 : maxLeaveBuzzer;
     }
 
     private parseWorld() {
