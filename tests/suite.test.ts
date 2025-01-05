@@ -31,7 +31,7 @@ function parseProblem (dirname:string) {
                 const world = ParseWorld(inputDocument);
                 const binary = (new KarelBinarySerializer().serialize(world));
                 const outputWorld = new World(10, 10);
-                deserializeKarelBinary(binary, outputWorld);
+                deserializeKarelBinary(outputWorld, binary);
 
                 const firstSave = world.save("start");
                 const binarySave = outputWorld.save("start");
