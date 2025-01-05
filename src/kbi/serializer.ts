@@ -1,5 +1,5 @@
 import { DumpTypes, KarelNumbers, World } from "@rekarel/core";
-import { DynamicBuffer } from "./dynamicBuffer";
+import { DynamicBuffer } from "../dynamicBuffer";
 
 const VERSION = 0;
 

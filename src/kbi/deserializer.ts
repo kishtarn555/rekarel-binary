@@ -1,7 +1,7 @@
 import { DumpTypes, KarelNumbers, World } from "@rekarel/core";
 
-export function deserializeKarelBinary(data: ArrayBuffer, target: World) {
-    new Deserialization(data, target);
+export function deserializeKarelBinary(target: World, data: ArrayBuffer) {
+    new Deserialization(target, data);
 
 }
 
@@ -13,7 +13,7 @@ class Deserialization {
     private aWord: number;
     private bWord: number;
     private cWord: number;
-    constructor(data: ArrayBuffer, target: World) {
+    constructor(target: World,data: ArrayBuffer) {
         this.data = new DataView(data);
         this.world = target;
         this.offset = 0;
