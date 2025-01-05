@@ -11,7 +11,9 @@
     "require": "./dist/index.cjs"
   },
   "scripts": {
-    "test:suite": "jest --testPathPattern=suite",
+    "test:kbi": "jest --testPathPattern=kbi",
+    "test:mdo": "jest --testPathPattern=mdo",
+    "test:all": "jest",
     "build": "npx rollup --config --bundleConfigAsCjs"
   },
   "repository": {
