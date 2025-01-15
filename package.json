@@ -1,6 +1,6 @@
 {
   "name": "@rekarel/binary",
-  "version": "1.0.0-beta.2",
+  "version": "1.0.0",
   "description": "Rekarel binary data",
   "type": "module",
   "main": "dist/index.cjs",
