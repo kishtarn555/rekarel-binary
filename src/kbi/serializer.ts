@@ -1,7 +1,7 @@
 import { DumpTypes, KarelNumbers, World } from "@rekarel/core";
 import { DynamicBuffer } from "../dynamicBuffer";
 
-const VERSION = 0;
+const VERSION = 1;
 
 /**
  * This class allows to serialize a Karel World into a Binary format
@@ -56,7 +56,10 @@ class KarelSerialization {
         this.target.writeChar("K");
         this.target.writeChar("W");
         // File Version
-        this.target.writeUint8(VERSION);
+        this.target.writeUint8(
+            this.world.targetVersion === "1.0"?
+            0 : VERSION
+        );
         // Words sizes
         this.target.writeUint8(
             this.aWord +

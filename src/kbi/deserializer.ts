@@ -36,8 +36,15 @@ class Deserialization {
             throw new Error("BAD FORMAT");
         }
         const version = this.readUint8();
-        if (version !== 0) {
-            throw new Error("UNSUPPORTED VERSION");
+        switch( version) {
+            case 0:
+                this.world.targetVersion = "1.0";
+                break;
+            case 1:
+                this.world.targetVersion = "1.1";
+                break;
+            default:
+                throw new Error("UNSUPPORTED VERSION");
         }
         const wordSize = this.readUint8();
         this.aWord = wordSize & 3;

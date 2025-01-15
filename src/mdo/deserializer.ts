@@ -27,7 +27,8 @@ export function deserializeMdoKec(world: World, mdo: Uint16Array, kec?:Uint16Arr
 
     world.resize(width, height);
     world.clear();
-
+    //All MDO are 1.0 version only
+    world.targetVersion = "1.0";
     world.setBagBuzzers(
         mdo[8] === 0xFFFF ?
         KarelNumbers.a_infinite
